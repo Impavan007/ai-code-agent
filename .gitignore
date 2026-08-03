@@ -1,0 +1,59 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+nobuild/
+pybuild/
+src/
+stanley/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py-test-report.txt
+.pytest_cache/
+
+# Environment variables
+.env
+.venv
+.env.example
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Logs
+logs/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

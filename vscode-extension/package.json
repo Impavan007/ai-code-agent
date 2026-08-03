@@ -1,0 +1,72 @@
+{
+  "name": "antigravity-agent",
+  "displayName": "Antigravity AI Agent",
+  "description": "Premium IDE chat interface for the Antigravity Autonomous Coding Agent",
+  "version": "1.0.0",
+  "publisher": "antigravity",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "AI",
+    "Programming Languages",
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onView:antigravity-agent-chat",
+    "onCommand:antigravity.setApiKey",
+    "onCommand:antigravity.clearChat"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "antigravity-sidebar",
+          "title": "Antigravity AI",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "antigravity-sidebar": [
+        {
+          "type": "webview",
+          "id": "antigravity-agent-chat",
+          "name": "Antigravity Chat"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "antigravity.setApiKey",
+        "title": "Antigravity: Set Ollama API Key"
+      },
+      {
+        "command": "antigravity.clearChat",
+        "title": "Clear Chat"
+      }
+    ],
+    "configuration": {
+      "title": "Antigravity Agent",
+      "properties": {
+        "antigravity.model": {
+          "type": "string",
+          "default": "qwen3-coder:480b-cloud",
+          "enum": [
+            "qwen3-coder:480b-cloud",
+            "nemotron-3-super",
+            "gemma4:31b",
+            "gpt-oss:20b"
+          ],
+          "description": "The Ollama cloud model to target."
+        },
+        "antigravity.temperature": {
+          "type": "number",
+          "default": 0.2,
+          "description": "Sampling temperature for the agent."
+        }
+      }
+    }
+  }
+}
